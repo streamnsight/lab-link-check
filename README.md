@@ -1,6 +1,6 @@
 # Link checker
 
-This simpe script checks for broken links (A tag) and missing images (IMG tag) in a learning-library lab.
+This simple Selenium script checks for broken links (A tag) and missing images (IMG tag) in a learning-library lab.
 It can be adapted easily to any website by adapting the XPATH of the containers to check
 
 ## Installation
