@@ -1,7 +1,10 @@
-# Link checker
 
-This simple Selenium script checks for broken links (A tag) and missing images (IMG tag) in a learning-library lab.
+# Link checker & Dependency graph
+
+- The link_check script is a simple Selenium script checks for broken links (A tag) and missing images (IMG tag) in a learning-library lab.
 It can be adapted easily to any website by adapting the XPATH of the containers to check
+
+- The dependency graph builder scans the repo for labs and where they are used, so as to understand the impact of modifying a specific lab on other workshops.
 
 ## Installation
 
@@ -32,7 +35,7 @@ Make sure you download the same version as the local Chrome version (currently 8
 https://chromedriver.chromium.org/downloads
 
 
-## Run the test
+## Run the link_checker
 
 Either set an environment variable for the BASE URL, or pass it as a parameter to the script.
 
@@ -66,3 +69,12 @@ NON-REACHABLE LINKS:
 IMAGES NOT FOUND:
 ('not found', 'https://oracle.github.io/learning-library/developer-library/apex/spreadsheet/0-workshop-intro-and-setup/images/menu-button.png')
 ```
+
+
+## Run the build_graph script
+
+```
+python build_graph.py <PATH_TO_REPO_ROOT_FOLDER>
+```
+
+This produces a JSON file and a CSV file with the lab, and all the workshops it is used in.
